@@ -4,6 +4,10 @@ Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
+    movie_title = movie[:title]
+    movie_rat = movie[:rating]
+    movie_relea = movie[:release_date]
+    Movie.create!(title: movie_title, rating: movie_rat, release_date: movie_relea)
   end
   fail "Unimplemented"
 end
